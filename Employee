@@ -1,0 +1,79 @@
+package exercise1;
+
+
+public class Employee {
+	private String firstName;
+	private String lastName;
+	private double monthlySalary;
+	
+	public Employee(String firstName, 
+			String lastName, 
+			double monthlySalary){
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.monthlySalary = monthlySalary;
+	}
+	
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
+	}
+	
+	public void setLastName(String lastName){
+		this.lastName = lastName;
+	}
+	
+	public void setMonthlySalary(double monthlySalary){
+		if(monthlySalary >= 0){
+			this.monthlySalary = monthlySalary;
+		}
+	}
+ 
+	public String getFirstName(){
+		return firstName;
+	}
+	
+	public String getLastName(){
+		return lastName;
+	}
+	
+	public double getMonthlySalary(){
+		return monthlySalary;
+	}
+ 
+}
+
+
+// Test Code:
+
+
+ 
+ 
+public class EmployeeTest {
+	public static void main(String[] args){
+		Employee employee1 = new Employee("Barack ", "Obama", 2378.23);
+		Employee employee2 = new Employee("Neil ", "Nguyen", 721.56);
+		System.out.printf("%s %s's yearly salary: $%.2f%n", 
+				employee1.getFirstName(),
+				employee1.getLastName(),
+				employee1.getMonthlySalary()*12);
+		
+		
+		System.out.printf("%s %s's yearly salary: $%.2f%n", 
+				employee2.getFirstName(),
+				employee2.getLastName(),
+				employee2.getMonthlySalary()*12);	
+		
+		
+		System.out.printf("%s %s's yearly salary with 10 percent raise: $%.2f%n", 
+				employee1.getFirstName(),
+				employee1.getLastName(),
+				employee1.getMonthlySalary()*12*1.1);	
+		
+		
+		System.out.printf("%s %s's yearly salary with 10 percent raise: $%.2f%n", 
+				employee2.getFirstName(),
+				employee2.getLastName(),
+				employee2.getMonthlySalary()*12*1.1);
+	}
+}
+
