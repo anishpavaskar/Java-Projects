@@ -1,0 +1,42 @@
+package exercise;
+
+
+import java.util.Scanner;
+
+
+
+public class exercises {
+
+	public static void main(String[] args) 
+	{
+		 // init vars
+		int x;
+		int y;
+	
+		// asks user to 2 integers 
+		System.out.println("Enter two integers");
+		Scanner in= new Scanner (System.in);
+		
+		x=in.nextInt();
+		y=in.nextInt();
+	
+		in.close();
+		
+	// uses mod operator
+	int k = x % y; 
+	if (k == 0)
+	{
+		System.out.printf(" %d is a multiple of %d ", x ,y );
+	}
+	else
+	{
+		System.out.printf(" %d is not a  multiple of %d ", x ,y );
+	}
+	
+	
+	}
+	
+	
+	}	
+	
+
