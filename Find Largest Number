@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class num {
+ 
+	
+	 public static void main(String[] args) {
+		 
+		 
+	 Scanner input=new Scanner (System.in);
+
+	 int counter=0, number=0, largest=0; // initialize variables
+
+	 for (counter=0; counter<10;counter++){ // loop ten times 
+	 System.out.printf("Enter Number [%d]: ", counter+1);
+	 number=input.nextInt(); // store next integer in number
+	 largest=largest>number?largest:number; // check if new number is larger
+	 }
+
+	 System.out.printf("Largest = %d", largest); // displays the largest value
+	 }
+	 
+	
+	 
+	}
