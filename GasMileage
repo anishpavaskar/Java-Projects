@@ -1,0 +1,39 @@
+package exercise2;
+
+import java.util.Scanner;
+
+public class GasM {
+ 
+    public static void main(String[] args) {
+ 
+        int miles;  
+        int gallons;
+        int totalMiles = 0;
+        int totalGallons = 0;
+ 
+        Scanner input = new Scanner(System.in); 
+ 
+        System.out.println("This program calculates the miles per gallon obtained for each trip and prints out the combined miles per gallon obtained for all trips"); 
+               
+ 
+        System.out.println("\nEnter miles driven or enter -1 to quit: ");
+        miles = input.nextInt();
+         
+        while (miles != -1 ) {            
+            System.out.println("Enter gallons used: \n");
+           
+            gallons = input.nextInt();
+            System.out.println("\nMiles driven for this trip: " + miles);
+            System.out.println("Gallons used for this trip: " + gallons);
+            totalMiles += miles;
+            totalGallons += gallons;
+            System.out.printf("\nMiles per gallon for this trip: %f\nCombined Miles "
+                    + "per gallon: %f\n",(double)miles/gallons, (double)totalMiles/totalGallons);
+             
+            System.out.println("\nEnter miles driven or -1 to Quit: ");
+            miles = input.nextInt();
+        }
+        input.close();
+
+    }  
+}
