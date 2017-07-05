@@ -1,0 +1,59 @@
+package exercise2;
+
+
+import java.util.Scanner;
+
+
+public class small
+
+{
+    public static void main(String[] args)
+
+    {
+
+      Scanner input = new Scanner(System.in);
+
+        
+        int counter;
+
+        int smallest = Integer.MAX_VALUE;//stores smallest integer
+
+        int initialValue = 0;
+
+        int number = 0;
+
+         
+
+        System.out.print("Please enter an integer: ");
+
+        initialValue = input.nextInt();
+
+         
+
+        for(counter = 1;counter <= initialValue;counter++)
+
+        {
+
+            System.out.print("Please enter an integer: ");
+
+            number = input.nextInt();
+
+             
+
+            if(number < smallest)
+
+            {
+
+                smallest = number;
+
+            }
+
+        }
+
+ 
+
+        System.out.printf("The smallest integer is: %d\n", smallest);
+
+ 
+
+    }
