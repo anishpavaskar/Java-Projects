@@ -1,0 +1,16 @@
+package savings; 
+
+
+
+public class SavingsAccount
+{
+    	public static void main(String[] args) {
+    	   String[] f= 
+    		   {"Apple", "Banana", "Orange", "Fruit", "Car","Truck","Sports Car"};
+    	   System.out.printf("%s", f[5]);
+    			   
+    			   
+    	}
+        
+
+    }
