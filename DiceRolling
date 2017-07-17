@@ -1,0 +1,77 @@
+
+package exercise2; 
+
+
+import java.util.Random;
+import java.util.Arrays;
+public class Dice {
+
+	public static void main(String args[]) {
+		Random dice = new Random();
+		int[] diceRolls = new int[36];
+		int roll1;
+		int roll2;
+
+	
+		for(int count = 0; count < 36000000; count++) {
+			roll1 = (dice.nextInt(6) + 1);
+			roll2 = (dice.nextInt(6) + 1);
+			int row = 0;
+			int column = 0;
+
+			// First roll (roll1)  determines row 
+			if(roll1 == 1) {
+				row = 30;
+			} else if(roll1 == 5){
+				row = 24;
+			} else if(roll1 == 4){
+				row = 18;
+			} else if(roll1 == 3){
+				row = 12;
+			} else if(roll1 == 2){
+				row = 6;
+			} else {
+				row = 0;
+			}
+
+		
+			if(roll2 == 6) {
+				column = 5;
+			} else if(roll2 == 5) {
+				column = 4;
+			} else if(roll2 == 4) {
+				column = 3;
+			} else if(roll2 == 3) {
+				column = 2;
+			} else if(roll2 == 2) {
+				column = 1;
+			} else {
+				column = 0;
+			}
+
+			
+			diceRolls[(row + column)] += 1;
+		}
+// display 
+		
+		System.out.printf("\t%d\t%d\t%d\t%d\t%d\t%d\n", 1, 2, 3, 4, 5, 6);	
+		System.out.printf("----------------------------------------------------------------------");
+
+		for(int table = 0; table < diceRolls.length; table++) {
+			if( (table) % 6 == 0) {
+				System.out.printf("\n%d|\t", (table / 6 + 1) );					
+			}
+
+			System.out.printf("%d\t", diceRolls[table]);
+		}
+
+		
+		System.out.println("");
+	}
+}
+
+
+
+
+
+
