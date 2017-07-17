@@ -1,0 +1,29 @@
+package rectangle;
+
+ import java.util.Scanner;
+
+
+ public class TestRectangle {
+
+ public static void main(String[] args) {
+     
+     Scanner input = new Scanner(System.in);
+
+     System.out.println("Enter the width (should be less than 20)");
+     float width = input.nextFloat();
+
+     System.out.println("Enter the length (should be less than 20)");
+     float length = input.nextFloat();
+
+     Rectangle myRectangle = new Rectangle(width, length);
+
+     System.out.printf("The area is: %.2f\n", myRectangle.calcArea());
+     System.out.printf("The perimeter is: %.2f\n",
+             myRectangle.calcPerimeter());
+
+
+
+ }
+
+ }
+
