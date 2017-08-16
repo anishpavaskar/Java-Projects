@@ -1,0 +1,19 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Con extends JPanel{
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		
+		g.setColor(Color.RED);
+		int radius = 100;
+		for(int i = 0; i < 8; i++) {
+			g.drawArc(150-radius/2, 150-radius/2, radius, radius, 0, 360);
+			radius+=10;
+		}
+	}
+}
+
