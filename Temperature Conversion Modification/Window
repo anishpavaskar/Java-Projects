@@ -1,0 +1,68 @@
+package exercise23;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Window extends JFrame {
+
+	private final JTextField textField1;
+	private final JTextField textField2;
+	private final JLabel label1;
+	private final JLabel label2;
+	private final TextFieldHandler textFieldHandler;
+	private final JPanel celciusPanel;
+	private final JPanel kelvinPanel;
+
+	
+	public Window()  {
+		super("Temperature Conversion");
+		textFieldHandler = new TextFieldHandler();
+		celciusPanel = new JPanel();
+		kelvinPanel = new JPanel();
+		add(celciusPanel,BorderLayout.NORTH);
+		textField1 = new JTextField(15);
+		celciusPanel.add(textField1, BorderLayout.WEST);
+		label1 = new JLabel("F -> ?? C");
+		celciusPanel.add(label1, BorderLayout.EAST);
+		textField2 = new JTextField(15);
+		kelvinPanel.add(textField2, BorderLayout.WEST);
+		label2 = new JLabel("C -> ?? K");
+		kelvinPanel.add(label2, BorderLayout.EAST);
+		add(kelvinPanel, BorderLayout.SOUTH);
+		textField1.addActionListener(textFieldHandler);
+		textField2.addActionListener(textFieldHandler);
+	}
+	
+	private class TextFieldHandler implements ActionListener{
+
+		public TextFieldHandler() {
+
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String string = "";
+			if(e.getSource() == textField1) {
+				float farenheit = Float.parseFloat(e.getActionCommand());
+				float celcius = 5f/9f*(farenheit-32f);
+				label1.setText(String.format("F -> %.2f C",celcius));
+			}
+			if(e.getSource() == textField2) {
+				float celcius = Float.parseFloat(e.getActionCommand());
+				float kelvin = celcius + 273.15f;
+				label2.setText(String.format("C -> %.2f K",kelvin));
+			}
+
+		}
+
+	}
+
+
+}
+
