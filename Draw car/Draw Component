@@ -1,0 +1,15 @@
+public class Draw extends JPanel {
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		
+		g.setColor(Color.red);
+		g.fillOval(10,100,200,50);
+		g.setColor(Color.black);
+		g.fillOval(35, 130, 25, 25);
+		g.fillOval(170, 130, 25, 25);
+		g.setColor(Color.blue);
+		g.fillOval(30, 90, 150, 30);
+
+	}
+}
+
