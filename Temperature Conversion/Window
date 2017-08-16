@@ -1,0 +1,49 @@
+package exercise23;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Window extends JFrame {
+
+	private final JTextField textField;
+	private final JLabel label;
+	private final TextFieldHandler textFieldHandler;
+	
+	public Window()  {
+		super("Temperature Conversion");
+		textFieldHandler = new TextFieldHandler();
+		setLayout(new FlowLayout());
+		textField = new JTextField(15);
+		add(textField, BorderLayout.WEST);
+		label = new JLabel("F -> ?? C");
+		add(label, BorderLayout.EAST);
+		textField.addActionListener(textFieldHandler);
+	}
+	
+	private class TextFieldHandler implements ActionListener{
+
+		public TextFieldHandler() {
+
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String string = "";
+			if(e.getSource() == textField) {
+				float farenheit = Float.parseFloat(e.getActionCommand());
+				float celcius = 5f/9f*(farenheit-32f);
+				label.setText(String.format("F -> %.2f C",celcius));
+			}
+		}
+
+	}
+
+
+}
+
